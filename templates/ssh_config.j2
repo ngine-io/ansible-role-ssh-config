@@ -1,0 +1,4 @@
+Host {{ inventory_hostname }}
+{% for config in ssh_config__configs %}
+    {{ config }}
+{% endfor %}
