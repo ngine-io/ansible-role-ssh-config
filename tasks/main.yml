@@ -10,7 +10,7 @@
       changed_when: false
 
     - name: Remember fragments path
-      set_fact:
+      ansible.builtin.set_fact:
         ssh_config__fragments_path: "{{ temp.path }}"
 
     - name: Write an SSH config fragment for each host
