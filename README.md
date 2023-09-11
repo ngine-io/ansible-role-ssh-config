@@ -25,7 +25,7 @@ Via `requirements.yml`:
 # file: requirements.yml
 roles:
   - name: ngine_io.ssh_config
-    version: v0.1.0
+    version: v0.2.0
 ```
 
 To install:
