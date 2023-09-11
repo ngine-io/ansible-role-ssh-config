@@ -7,6 +7,8 @@ name: CI
       - main
     tags:
       - "v*"
+  schedule:
+    - cron: 57 7 * * 2  # Run weekly
 
 defaults:
   run:
@@ -72,7 +74,7 @@ jobs:
           python-version: "3.x"
 
       - name: Install test dependencies.
-        run: pip3 install ansible molecule[docker] docker
+        run: pip3 install ansible molecule molecule-docker docker
 
       - name: Run Molecule tests.
         run: molecule test
