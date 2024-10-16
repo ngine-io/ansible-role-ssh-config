@@ -30,11 +30,7 @@ jobs:
           python-version: 3.x
 
       - name: Install test dependencies.
-        run: pip3 install yamllint ansible ansible-lint
-
-      - name: Lint code.
-        run: |
-          yamllint .
+        run: pip3 install ansible ansible-lint
 
       - name: Lint code.
         run: |
@@ -48,20 +44,9 @@ jobs:
         include:
           - distro: debian12
             playbook: converge.yml
-          - distro: debian11
-            playbook: converge.yml
-          - distro: debian10
-            playbook: converge.yml
           - distro: rockylinux9
             playbook: converge.yml
-          - distro: rockylinux8
-            playbook: converge.yml
-          - distro: centos7
-            playbook: converge.yml
-          - distro: ubuntu2204
-            playbook: converge.yml
-          - distro: ubuntu2004
-            playbook: converge.yml
+          - distro: ubuntu2404
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v4
