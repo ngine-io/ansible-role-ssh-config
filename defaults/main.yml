@@ -1,5 +1,6 @@
 ---
 ssh_config__env: "{{ inventory_file }}"
+ssh_config__when: "{{ ansible_limit is not defined }}"
 ssh_config__dest_path: "~/.ssh/conf.d"
 ssh_config__configs:
   - Hostname {{ ansible_host | default(inventory_hostname) }}

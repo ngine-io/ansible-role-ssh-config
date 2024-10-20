@@ -1,6 +1,7 @@
 ---
 - name: SSH config
   run_once: true
+  when: ssh_config__when
   block:
     - name: Create temp fragments dir
       ansible.builtin.tempfile:
