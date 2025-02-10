@@ -9,6 +9,7 @@
         suffix: _ssh_config_{{ ssh_config__env }}
       register: temp
       changed_when: false
+      check_mode: false
 
     - name: Remember fragments path
       ansible.builtin.set_fact:
@@ -47,3 +48,4 @@
         path: "{{ ssh_config__fragments_path }}"
         state: absent
       changed_when: false
+      check_mode: false
